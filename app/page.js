@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import '../styles/header.css'
 
-export default function Home() {
+const Home = () => {
   return (
-    <h1>hello world1</h1>
+    <h1>Hello madlang people</h1>
   )
 }
+
+export default Home;
