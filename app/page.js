@@ -4,7 +4,7 @@ import '../styles/header.css'
 
 const Home = () => {
   return (
-    <h1>Hello madlang people</h1>
+    <h1>Hello world again!</h1>
   )
 }
 
