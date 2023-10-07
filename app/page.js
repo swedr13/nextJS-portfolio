@@ -1,8 +1,17 @@
 import Image from 'next/image'
 import styles from './page.module.css';
-import CardProject from './components/cardProject'
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
+import CardProject from './components/CardProject';
+import About from './components/About';
 
+
+const CardData = [
+  { key: 1, image: 'img/1.jpg', title: 'Laser Machines Direct', description: 'One-Stop-Shop for Medical Grade Lasers', link: 'https://laser-machine.co.uk/' },
+  { key: 2, image: 'img/2.jpg', title: 'Hydrafacial Reading', description: 'Reveal Your True Beauty with Hydrafacial Reading', link: 'https://hydrafacialreading.co.uk/' },
+  { key: 3, image: 'img/3.jpg', title: 'Profhilo Reading', description: 'Profhilo Reading: Regain Your Youth and Natural Glow', link: 'https://profhiloreading.co.uk/' },
+  { key: 4, image: 'img/4.jpg', title: 'GetCCN', description: 'Managed IT Services For Chicago And Surrounding Areas.', link: 'https://getccn.com/Echo/' },
+  { key: 5, image: 'img/5.jpg', title: 'Net512', description: 'Managed IT Services For Austin And Surrounding Areas', link: 'https://www.net512.com/' }
+]
 
 
 const Home = () => {
@@ -27,62 +36,9 @@ const Home = () => {
 
   <Navbar />
 
-
-
-
-
-
   <div className="container-fluid p-0">
-    <section className="resume-section p-3 p-lg-5 d-flex d-column bg-light" id="about">
-      <div className="my-auto">
-        <h1 className="mb-0">
-          Junelle
-          <span className="text-primary">Suaybaguio</span>
-        </h1>
-        <div className="subheading mb-5">
-          Calinan, Davao City Philippines · 0910-1151395 ·
-          <a href="mailto:name@email.com">junelle@gmail.com</a>
-        </div>
-        <p className="mb-5">
-          I design and develop services for customers of all sizes, specializing
-          in creating stylish, modern websites and web services.
-        </p>
-        <ul className="list-inline list-social-icons mb-0">
-          <li className="list-inline-item">
-            <a href="#">
-              <span className="fa-stack fa-lg">
-                <i className="fa fa-circle fa-stack-2x" />
-                <i className="fa fa-facebook fa-stack-1x fa-inverse" />
-              </span>
-            </a>
-          </li>
-          <li className="list-inline-item">
-            <a href="#">
-              <span className="fa-stack fa-lg">
-                <i className="fa fa-circle fa-stack-2x" />
-                <i className="fa fa-twitter fa-stack-1x fa-inverse" />
-              </span>
-            </a>
-          </li>
-          <li className="list-inline-item">
-            <a href="#">
-              <span className="fa-stack fa-lg">
-                <i className="fa fa-circle fa-stack-2x" />
-                <i className="fa fa-linkedin fa-stack-1x fa-inverse" />
-              </span>
-            </a>
-          </li>
-          <li className="list-inline-item">
-            <a href="#">
-              <span className="fa-stack fa-lg">
-                <i className="fa fa-circle fa-stack-2x" />
-                <i className="fa fa-github fa-stack-1x fa-inverse" />
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <About />
+    
     <section
       className="resume-section p-3 p-lg-5 d-flex flex-column bg-light"
       id="experience"
@@ -178,12 +134,12 @@ const Home = () => {
       className="resume-section p-3 p-lg-5 d-flex flex-column bg-light"
       id="projects"
     >
+      
       <div className="my-auto">
         <h2 className="mb-5">Projects</h2>
-
-        <CardProject />
-
-
+        <div className="card-columns">
+        <CardProject CardData={CardData} />
+        </div>
       </div>
     </section>
 
@@ -198,12 +154,8 @@ const Home = () => {
           in creating stylish, modern websites and web services.
         </p>
         <div className="form-group col-4">
-          <label htmlFor="cardTitle">Full Name</label>
-          <input type="text" className="form-control" id="cardTitle" />
-        </div>
-        <div className="form-group col-4">
-          <label htmlFor="cardText">Email</label>
-          <input type="text" className="form-control" id="cardText" />
+          <label htmlFor="fullName">Full Name</label>
+          <input type="text" className="form-control" id="fullName" />
         </div>
         <div className="form-group col-4">
           <label htmlFor="message">Message:</label>
