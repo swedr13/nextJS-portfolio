@@ -3,7 +3,6 @@ const CardProject = ({ CardData }) => {
     <>
     {CardData?.map(CardData => (
       <div key={CardData.key}>
-        
           <div className="card mb-3">
             <img
               className="card-img-top"
@@ -18,8 +17,7 @@ const CardProject = ({ CardData }) => {
               <a href={CardData.link}>Visit Website</a>
             </div>
           </div>
-        </div>
-      
+        </div>  
     ))}
     </>
   );
