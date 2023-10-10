@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import styles from './page.module.css';
 import Navbar from './components/Navbar';
-import CardProject from './components/CardProject';
+import CardProject from './components/cardProject';
 import FullName from './components/FullName';
 import SocialIcons from './components/SocialIcons';
 import About from './components/About';
 import Info from './components/Info';
 import Experience from './components/Experience';
 import Education from './components/Education';
+import LoginButton from './components/LoginButton';
 
 
 
@@ -80,6 +81,7 @@ const Home = () => {
   <div className="container-fluid p-0">
   <section className="resume-section p-3 p-lg-5 d-flex d-column bg-light" id="about">
       <div className="my-auto">
+      <LoginButton />
       <FullName fullName={fullName} />
       <Info info={info} />
         <About about={about} />
