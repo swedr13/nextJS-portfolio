@@ -1,3 +1,5 @@
+'use client'
+
 import LoginButton from "@/app/components/LoginButton"
 import { SessionProvider } from "next-auth/react"
 
