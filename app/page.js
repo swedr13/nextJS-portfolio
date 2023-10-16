@@ -1,7 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import styles from './page.module.css';
 import Navbar from './components/Navbar';
-import CardProject from './components/CardProject';
+import CardProject from './components/cardProject';
 import FullName from './components/FullName';
 import SocialIcons from './components/SocialIcons';
 import About from './components/About';
@@ -9,9 +11,8 @@ import Info from './components/Info';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import LoginButton from './components/LoginButton';
-
-
-
+import CardForm from './components/cardForm';
+import { SessionProvider } from 'next-auth/react';
 
 const fullName = [
   { firstName: 'Junelle', lastName: 'Suaybaguio' }
@@ -47,13 +48,13 @@ const education = [
   { key: 3, schoolName: 'CALINAN CENTRAL ELEMENTARY SCHOOL', course: '', address: 'Penano St., Calinan, Calinan District, Davao City', schoolYear: '2001-2007' }
 ]
 
-const CardData = [
-  { key: 1, image: 'img/1.jpg', title: 'Laser Machines Direct', description: 'One-Stop-Shop for Medical Grade Lasers', link: 'https://laser-machine.co.uk/' },
-  { key: 2, image: 'img/2.jpg', title: 'Hydrafacial Reading', description: 'Reveal Your True Beauty with Hydrafacial Reading', link: 'https://hydrafacialreading.co.uk/' },
-  { key: 3, image: 'img/3.jpg', title: 'Profhilo Reading', description: 'Profhilo Reading: Regain Your Youth and Natural Glow', link: 'https://profhiloreading.co.uk/' },
-  { key: 4, image: 'img/4.jpg', title: 'GetCCN', description: 'Managed IT Services For Chicago And Surrounding Areas.', link: 'https://getccn.com/Echo/' },
-  { key: 5, image: 'img/5.jpg', title: 'Net512', description: 'Managed IT Services For Austin And Surrounding Areas', link: 'https://www.net512.com/' }
-]
+// const CardData = [
+//   { key: 1, image: 'img/1.jpg', title: 'Laser Machines Direct', description: 'One-Stop-Shop for Medical Grade Lasers', link: 'https://laser-machine.co.uk/' },
+//   { key: 2, image: 'img/2.jpg', title: 'Hydrafacial Reading', description: 'Reveal Your True Beauty with Hydrafacial Reading', link: 'https://hydrafacialreading.co.uk/' },
+//   { key: 3, image: 'img/3.jpg', title: 'Profhilo Reading', description: 'Profhilo Reading: Regain Your Youth and Natural Glow', link: 'https://profhiloreading.co.uk/' },
+//   { key: 4, image: 'img/4.jpg', title: 'GetCCN', description: 'Managed IT Services For Chicago And Surrounding Areas.', link: 'https://getccn.com/Echo/' },
+//   { key: 5, image: 'img/5.jpg', title: 'Net512', description: 'Managed IT Services For Austin And Surrounding Areas', link: 'https://www.net512.com/' }
+// ]
 
 
 const Home = () => {
@@ -81,7 +82,9 @@ const Home = () => {
   <div className="container-fluid p-0">
   <section className="resume-section p-3 p-lg-5 d-flex d-column bg-light" id="about">
       <div className="my-auto">
+      <SessionProvider>
       <LoginButton />
+      </SessionProvider>
       <FullName fullName={fullName} />
       <Info info={info} />
         <About about={about} />
@@ -116,9 +119,12 @@ const Home = () => {
       
       <div className="my-auto">
         <h2 className="mb-5">Projects</h2>
-        <div className="card-columns">
-        <CardProject CardData={CardData} />
+        <div className="card-columns mb-5">
+          <CardProject />
         </div>
+        <SessionProvider>
+        <CardForm />
+        </SessionProvider>
       </div>
     </section>
 

@@ -1,16 +1,12 @@
-'use client'
-
-import Link from "next/link";
 import { useSession } from "next-auth/react"
- 
+import Link from "next/link";
 
-const LoginButton = () => {
-  const { data: session, loading } = useSession();
-  console.log({ session, loading })
+const LoginButton = () => { 
+const { data: session } = useSession();
 
     return (
       <>
-      {!loading && !session && (
+      {!session && (
         <Link href="/api/auth/signin" passHref>
         <button role="button" className="btn btn-danger">Login</button>
         <br />
@@ -19,14 +15,12 @@ const LoginButton = () => {
       )}
 
       {session && (
-        <Link href="/api/auth/sigout" passHref>
+        <Link href="/api/auth/signout" passHref>
         <button role="button" className="btn btn-danger">Logout</button>
         <br />
         <br />
-      </Link>
-        
+      </Link>  
       )}
-
     </>  
     );
   }

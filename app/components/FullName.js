@@ -1,4 +1,4 @@
-const FullName = ( {fullName}) => {
+const FullName = ( {fullName} ) => {
   return (
     <>
     {fullName?.map(fullName => (
