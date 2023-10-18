@@ -60,15 +60,6 @@ const education = [
 const Home = () => {
   return (
     <>
-  <meta charSet="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>Junelle Suaybaguio Portfolio</title>
-
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"/>
@@ -82,9 +73,9 @@ const Home = () => {
   <div className="container-fluid p-0">
   <section className="resume-section p-3 p-lg-5 d-flex d-column bg-light" id="about">
       <div className="my-auto">
-      <SessionProvider>
+
       <LoginButton />
-      </SessionProvider>
+
       <FullName fullName={fullName} />
       <Info info={info} />
         <About about={about} />
