@@ -1,7 +1,6 @@
 const { PrismaClient } = require('@prisma/client')
 const { hash } = require("bcrypt");
 
-
 const prisma = new PrismaClient()
 
 async function main() {

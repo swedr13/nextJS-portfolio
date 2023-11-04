@@ -1,11 +1,10 @@
-const About = ( {about} ) => {
+const About = () => {
   return (
     <>
-    {about?.map(about => (
       <p className="mb-5">
-      {about.about}
+        I design and develop services for customers of all sizes, specializing
+        in creating stylish, modern websites and web services.
       </p>
-    ))}
     </>
   );
 }

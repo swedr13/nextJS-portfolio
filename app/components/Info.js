@@ -1,12 +1,10 @@
-const Info = ( {info} ) => {
+const Info = () => {
   return (
     <>
-    {info?.map(info => (
       <div className="subheading mb-5">
-      {info.address} · {info.contactNo} ·
-      <a href="mailto:name@email.com">{info.email}</a>
+        Calinan, Davao City Philippines · 0910-1151395 ·
+        <a href="mailto:name@email.com">junelle@gmail.com</a>
       </div>
-    ))}
     </>
   );
 }

@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Providers } from './providers';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,10 +11,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       <body className={inter.className}>
         <Providers>{children}</Providers>
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"/>
+        <Script src="vendor/jquery/jquery.min.js" />
+        <Script src="vendor/bootstrap/js/bootstrap.bundle.min.js" />
+        <Script src="vendor/jquery-easing/jquery.easing.min.js" />
+        <Script src="js/resume.min.js" />
       </body>
     </html>
   );
